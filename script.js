@@ -1,20 +1,15 @@
-const toggle = document.getElementById("theme-toggle");
-const root = document.documentElement;
+// Koppla formulärfält till preview
+const fields = [
+    { input: "name", preview: "prevName", default: "Ditt Namn" },
+    { input: "title", preview: "prevTitle", default: "Din Titel" },
+    { input: "description", preview: "prevDescription", default: "Här kommer din presentation att synas." },
+    { input: "experience", preview: "prevExperience", default: "Ingen erfarenhet inlagd ännu." },
+    { input: "education", preview: "prevEducation", default: "Ingen utbildning inlagd ännu." }
+];
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  if (document.body.classList.contains("dark")) {
-    root.style.setProperty("--bg", "#0f172a");
-    root.style.setProperty("--bg-alt", "#1e293b");
-    root.style.setProperty("--text", "#f1f5f9");
-    root.style.setProperty("--muted", "#94a3b8");
-    toggle.innerHTML = "☀️";
-  } else {
-    root.style.setProperty("--bg", "#f5f5f7");
-    root.style.setProperty("--bg-alt", "#fff");
-    root.style.setProperty("--text", "#111");
-    root.style.setProperty("--muted", "#6b7280");
-    toggle.innerHTML = "☾";
-  }
+fields.forEach(field => {
+    document.getElementById(field.input).addEventListener("input", () => {
+        const value = document.getElementById(field.input).value.trim();
+        document.getElementById(field.preview).textContent = value || field.default;
+    });
 });
