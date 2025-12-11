@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57VN3NP9');</script>
-<!-- End Google Tag Manager -->
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MittCV.se</title>
@@ -16,112 +8,212 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57VN3NP9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- HEADER -->
-    <header class="header">
-        <h1>MittCV.se</h1>
+    <!-- HEADER (klickbar) -->
+    <header class="header" id="siteHeader">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="images/typewriter.png" alt="Skrivmaskin" class="logo-icon">
+                <span class="logo-text">MittCV.se</span>
+            </div>
+        </div>
     </header>
 
     <!-- STARTSIDA -->
     <section id="home" class="page active">
-        <h2>Skapa ditt bästa CV och Personliga Brev</h2>
-        <p class="intro-text">
-            Ett starkt CV och personligt brev öppnar dörrar. Vi hjälper dig skapa
-            professionella dokument som lyfter fram dina styrkor och ökar chansen att få drömjobbet.
-        </p>
+        <div class="hero">
+            <div class="hero-text">
+                <span class="pill">Din digitala karriärpartner</span>
+                <h1>Skapa ett CV och personligt brev som sticker ut.</h1>
+                <p class="intro-text">
+                    MittCV.se hjälper dig att forma proffsiga dokument som känns både seriösa och personliga.
+                    Fyll i dina uppgifter – vi skapar en snygg layout åt dig.
+                </p>
 
-        <div class="card-container">
-            <div class="info-card">
-                <h3>Varför är ett CV viktigt?</h3>
-                <p>Ditt CV visar vem du är, vad du gjort och vad du kan bidra med. 
-                Det är din första chans att imponera.</p>
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <span class="dot"></span>
+                        <p>Strukturerade, lättlästa CV:n som rekryterare älskar.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="dot"></span>
+                        <p>Personliga brev som förklarar vem du är – inte bara vad du gjort.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="dot"></span>
+                        <p>Snabb nedladdning som PDF – redo att skickas direkt.</p>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <button class="main-btn" onclick="navigate('cvForm')">Skapa ditt CV</button>
+                    <button class="main-btn secondary" onclick="navigate('pbForm')">Skapa personligt brev</button>
+                </div>
             </div>
 
-            <div class="info-card">
-                <h3>Varför behövs ett personligt brev?</h3>
-                <p>Det personliga brevet berättar din historia – varför du söker jobbet och 
-                varför just du är rätt person.</p>
+            <div class="hero-image office-hero">
+                <!-- Bakgrundsbild sätts i CSS -->
+                <div class="hero-overlay-card">
+                    <h3>Vad gör ett bra CV?</h3>
+                    <p>Ett tydligt CV lyfter dina styrkor, erfarenheter och potential – på några sekunder.</p>
+                </div>
             </div>
         </div>
 
-        <div class="button-row">
-            <button class="main-btn" onclick="navigate('cvForm')">Skapa ditt CV</button>
-            <button class="main-btn" onclick="navigate('pbForm')">Skapa ditt personliga brev</button>
+        <div class="card-container">
+            <div class="info-card">
+                <h3>CV – din överblick</h3>
+                <p>
+                    Ett CV är din sammanfattning: utbildning, jobb, färdigheter. Här visar du svart på vitt
+                    varför du matchar tjänsten.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Personligt brev – din röst</h3>
+                <p>
+                    I det personliga brevet berättar du mer om dig som person – driv, intressen och varför
+                    du söker just det här jobbet.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Fördelarna med MittCV.se</h3>
+                <p>
+                    Vi kombinerar tydlig struktur, modern design och lekfulla detaljer för att göra din ansökan
+                    både proffsig och minnesvärd.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- CV FORM -->
     <section id="cvForm" class="page">
         <h2>Skapa ditt CV</h2>
+        <p class="section-intro">Fyll i de viktigaste delarna så bygger vi upp ett tydligt och snyggt CV åt dig.</p>
 
-        <label>Namn</label>
-        <input type="text" id="cv_name">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Namn</label>
+                <input type="text" id="cv_name" placeholder="Ditt namn">
+            </div>
 
-        <label>Titel</label>
-        <input type="text" id="cv_title">
+            <div class="form-group">
+                <label>Titel</label>
+                <input type="text" id="cv_title" placeholder="Ex. Digital marknadsförare">
+            </div>
 
-        <label>Profiltext</label>
-        <textarea id="cv_profile"></textarea>
+            <div class="form-group full-width">
+                <label>Profil</label>
+                <textarea id="cv_profile" placeholder="En kort beskrivning av dig och vad du söker..."></textarea>
+            </div>
 
-        <label>Arbetslivserfarenhet</label>
-        <textarea id="cv_exp"></textarea>
+            <div class="form-group full-width">
+                <label>Arbetslivserfarenhet</label>
+                <textarea id="cv_exp" placeholder="Lista dina tidigare tjänster, roller och ansvar..."></textarea>
+            </div>
 
-        <label>Utbildning</label>
-        <textarea id="cv_edu"></textarea>
+            <div class="form-group full-width">
+                <label>Utbildning</label>
+                <textarea id="cv_edu" placeholder="Utbildningar, kurser och certifikat..."></textarea>
+            </div>
 
-        <label>Ladda upp bild</label>
-        <input type="file" id="cv_img" accept="image/*">
+            <div class="form-group">
+                <label>Färdigheter</label>
+                <textarea id="cv_skills" placeholder="Ex. Kommunikation, projektledning, Google Analytics..."></textarea>
+            </div>
 
-        <button class="main-btn" onclick="generateCV()">Generera CV</button>
-        <button class="back-btn" onclick="navigate('home')">Tillbaka</button>
+            <div class="form-group">
+                <label>Språk</label>
+                <textarea id="cv_languages" placeholder="Ex. Svenska (flytande), Engelska (mycket bra)..."></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Ladda upp bild</label>
+                <input type="file" id="cv_img" accept="image/*">
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="main-btn" onclick="generateCV()">Generera CV</button>
+            <button class="ghost-btn" onclick="navigate('home')">Till startsidan</button>
+        </div>
     </section>
 
     <!-- CV PREVIEW -->
     <section id="cvPreview" class="page">
-        <h2>Förhandsgranskning – Ditt CV</h2>
+        <h2>Förhandsgranskning – ditt CV</h2>
+        <p class="section-intro">Här ser du hur ditt CV kommer att se ut. Justera i formuläret om du vill ändra något.</p>
 
-        <div id="cvOutput" class="preview-box"></div>
+        <div id="cvOutput" class="preview-box cv-layout"></div>
 
-        <button class="main-btn" onclick="downloadPDF('cvOutput')">Ladda ner som PDF</button>
-        <button class="back-btn" onclick="navigate('cvForm')">Tillbaka</button>
+        <div class="form-actions">
+            <button class="main-btn" onclick="downloadPDF('cvOutput')">Ladda ner CV som PDF</button>
+            <button class="ghost-btn" onclick="navigate('cvForm')">Tillbaka till formuläret</button>
+        </div>
     </section>
 
     <!-- PERSONLIGT BREV FORM -->
     <section id="pbForm" class="page">
-        <h2>Skapa ditt Personliga Brev</h2>
+        <h2>Skapa ditt personliga brev</h2>
+        <p class="section-intro">
+            Här fokuserar vi på dig som person – driv, intressen och varför du söker jobbet.
+        </p>
 
-        <label>Namn</label>
-        <input type="text" id="pb_name">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Namn</label>
+                <input type="text" id="pb_name" placeholder="Ditt namn">
+            </div>
 
-        <label>Ålder</label>
-        <input type="text" id="pb_age">
+            <div class="form-group">
+                <label>Ålder</label>
+                <input type="text" id="pb_age" placeholder="Ex. 27 år">
+            </div>
 
-        <label>Intressen</label>
-        <textarea id="pb_interests"></textarea>
+            <div class="form-group full-width">
+                <label>Intressen</label>
+                <textarea id="pb_interests" placeholder="Vad gör du på fritiden? Vad brinner du för?"></textarea>
+            </div>
 
-        <label>Kort om dig</label>
-        <textarea id="pb_story"></textarea>
+            <div class="form-group full-width">
+                <label>Kort om din bakgrund</label>
+                <textarea id="pb_story" placeholder="Berätta kort om din resa, tidigare jobb, studier..."></textarea>
+            </div>
 
-        <label>Ladda upp bild</label>
-        <input type="file" id="pb_img" accept="image/*">
+            <div class="form-group full-width">
+                <label>Varför söker du jobbet?</label>
+                <textarea id="pb_why" placeholder="Varför passar du på just den här tjänsten?"></textarea>
+            </div>
 
-        <button class="main-btn" onclick="generatePB()">Generera Personligt Brev</button>
-        <button class="back-btn" onclick="navigate('home')">Tillbaka</button>
+            <div class="form-group full-width">
+                <label>Ladda upp bild</label>
+                <input type="file" id="pb_img" accept="image/*">
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="main-btn" onclick="generatePB()">Generera personligt brev</button>
+            <button class="ghost-btn" onclick="navigate('home')">Till startsidan</button>
+        </div>
     </section>
 
     <!-- PERSONLIGT BREV PREVIEW -->
     <section id="pbPreview" class="page">
-        <h2>Förhandsgranskning – Ditt Brev</h2>
+        <h2>Förhandsgranskning – ditt personliga brev</h2>
+        <p class="section-intro">Justera texten i formuläret om något behöver finputsas.</p>
 
-        <div id="pbOutput" class="preview-box"></div>
+        <div id="pbOutput" class="preview-box letter-layout"></div>
 
-        <button class="main-btn" onclick="downloadPDF('pbOutput')">Ladda ner som PDF</button>
-        <button class="back-btn" onclick="navigate('pbForm')">Tillbaka</button>
+        <div class="form-actions">
+            <button class="main-btn" onclick="downloadPDF('pbOutput')">Ladda ner brev som PDF</button>
+            <button class="ghost-btn" onclick="navigate('pbForm')">Tillbaka till formuläret</button>
+        </div>
     </section>
 
+    <!-- HTML2CANVAS FÖR PDF-SKAPANDE -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
+
