@@ -8,259 +8,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-57VN3NP9');</script>
 <!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <title>Simon Tydén Busck – Marketing CV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57VN3NP9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <!-- Header / Nav -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="#hero" class="logo">STB</a>
-      <nav class="nav">
-        <a href="#about">Om</a>
-        <a href="#experience">Erfarenhet</a>
-        <a href="#skills">Skills</a>
-        <a href="#cases">Case</a>
-        <a href="#contact">Kontakt</a>
-      </nav>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Växla tema">
-        <span class="theme-icon">☾</span>
-      </button>
-    </div>
-  </header>
+    <header>
+        <h1>Skapa ditt proffsiga CV</h1>
+        <p>Fyll i dina uppgifter och se ditt CV byggas i realtid.</p>
+    </header>
 
-  <div class="page">
-    <main class="shell">
+    <main class="wrapper">
 
-      <!-- Left Column -->
-      <section class="left">
+        <!-- FORMULÄR -->
+        <section class="form-box">
+            <h2>Fyll i dina uppgifter</h2>
 
-        <!-- HERO -->
-        <section id="hero" class="hero">
-          <div>
-            <p class="hero-subtitle">Marketing · Growth · Brand Strategy</p>
-            <h1 class="hero-title">Simon Tydén Busck</h1>
-            <p class="hero-role">Senior Marketing Strategist & Brand Builder</p>
-            <p class="hero-tagline">
-              Driver varumärken framåt med <strong>growth marketing</strong>, 
-              <strong>skarpa kreativa koncept</strong> och <strong>datadrivet tänk</strong>.
-            </p>
+            <label for="name">Namn</label>
+            <input type="text" id="name" placeholder="Ditt namn">
 
-            <div class="hero-meta">
-              <span class="pill pill-accent">+7 år erfarenhet</span>
-              <span class="pill">Growth & Paid Social</span>
-              <span class="pill">Brand Positioning</span>
+            <label for="title">Titel / Yrkesroll</label>
+            <input type="text" id="title" placeholder="Ex. Webbutvecklare">
+
+            <label for="description">Kort beskrivning</label>
+            <textarea id="description" placeholder="Skriv en kort presentation..."></textarea>
+
+            <label for="experience">Arbetslivserfarenhet</label>
+            <textarea id="experience" placeholder="Lista relevant erfarenhet..."></textarea>
+
+            <label for="education">Utbildning</label>
+            <textarea id="education" placeholder="Lista dina utbildningar..."></textarea>
+        </section>
+
+        <!-- FÖRHANDSGRANSKNING -->
+        <section class="preview-box">
+            <h2>Förhandsgranskning</h2>
+
+            <div class="cv-preview">
+                <h1 id="prevName">Ditt Namn</h1>
+                <h3 id="prevTitle">Din Titel</h3>
+                <p id="prevDescription">Här kommer din presentation att synas.</p>
+
+                <h2>Erfarenhet</h2>
+                <p id="prevExperience">Ingen erfarenhet inlagd ännu.</p>
+
+                <h2>Utbildning</h2>
+                <p id="prevEducation">Ingen utbildning inlagd ännu.</p>
             </div>
-          </div>
-
-          <aside class="hero-profile-card">
-            <div class="avatar">
-              <img src="https://via.placeholder.com/200x200.png?text=Simon" alt="Porträtt på Simon (placeholder)">
-            </div>
-            <p class="hero-location">Bas i Göteborg · Arbetar globalt</p>
-            <p class="hero-availability">
-              <span class="dot"></span> Öppen för nya uppdrag
-            </p>
-          </aside>
         </section>
 
-        <!-- ABOUT -->
-        <section id="about" class="section">
-          <div class="section-header">
-            <h2 class="section-title">Om Simon</h2>
-            <span class="section-kicker">Strategi · Kreativitet · Tillväxt</span>
-          </div>
-          <p class="about-text">
-            Simon är en datadriven men kreativ marketingstrateg från Göteborg. 
-            Han har byggt upp varumärken, skalat kampanjer och arbetat med performance, 
-            funnel design och content i flera branscher. Han trivs bäst där tydlig positionering 
-            möter stark kreativ konceptutveckling och där resultat går att mäta svart på vitt.
-          </p>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section id="experience" class="section">
-          <div class="section-header">
-            <h2 class="section-title">Erfarenhet</h2>
-            <span class="section-kicker">Tidigare roller</span>
-          </div>
-
-          <div class="experience-list">
-
-            <article class="experience-item">
-              <div>
-                <h3 class="experience-main-title">Head of Growth Marketing</h3>
-                <p class="experience-company">Northwave Studio · Göteborg</p>
-                <p class="experience-description">
-                  Ledde tillväxtstrategier, byggde skalbara funnels och ansvarade för 
-                  paid social, contentproduktion och konverteringsoptimering.
-                </p>
-              </div>
-              <div class="experience-meta">
-                <div class="experience-years">2021 – Nu</div>
-                <div class="experience-tags">
-                  <span class="tag">Paid Social</span>
-                  <span class="tag">CRO</span>
-                  <span class="tag">Growth</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="experience-item">
-              <div>
-                <h3 class="experience-main-title">Brand & Content Strategist</h3>
-                <p class="experience-company">Bright Agency · Remote</p>
-                <p class="experience-description">
-                  Arbetade med positionering, varumärkesplattformar och skapade 
-                  contentstrategier för tech-, lifestyle- och e-handelsbolag.
-                </p>
-              </div>
-              <div class="experience-meta">
-                <div class="experience-years">2018 – 2021</div>
-                <div class="experience-tags">
-                  <span class="tag">Brand</span>
-                  <span class="tag">Content</span>
-                  <span class="tag">Campaigns</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="experience-item">
-              <div>
-                <h3 class="experience-main-title">Digital Marketing Specialist</h3>
-                <p class="experience-company">Urban Nest Collective · Berlin</p>
-                <p class="experience-description">
-                  Jobbade med Google Ads, CRM-flöden, produktflöden och 
-                  performanceoptimering i snabbväxande miljö.
-                </p>
-              </div>
-              <div class="experience-meta">
-                <div class="experience-years">2015 – 2018</div>
-                <div class="experience-tags">
-                  <span class="tag">Google Ads</span>
-                  <span class="tag">CRM</span>
-                  <span class="tag">Analytics</span>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
-      </section>
-
-      <!-- Right Column -->
-      <section class="right">
-
-        <!-- SKILLS -->
-        <section id="skills" class="section">
-          <div class="section-header">
-            <h2 class="section-title">Skills</h2>
-            <span class="section-kicker">Simons styrkor</span>
-          </div>
-
-          <div class="skills-layout">
-
-            <div class="skill-badges">
-              <span class="skill-pill primary">Growth Marketing</span>
-              <span class="skill-pill primary">Paid Social</span>
-              <span class="skill-pill">Brand Strategy</span>
-              <span class="skill-pill">Copywriting</span>
-              <span class="skill-pill">Analytics</span>
-              <span class="skill-pill">Funnel Design</span>
-            </div>
-
-            <div class="skill-bars">
-              <div class="skill-row">
-                <div class="skill-row-label"><span>Growth</span><span>Expert</span></div>
-                <div class="skill-bar-shell"><div class="skill-bar-fill level-high"></div></div>
-              </div>
-
-              <div class="skill-row">
-                <div class="skill-row-label"><span>Paid Social</span><span>Avancerad</span></div>
-                <div class="skill-bar-shell"><div class="skill-bar-fill level-mid"></div></div>
-              </div>
-
-              <div class="skill-row">
-                <div class="skill-row-label"><span>Brand & Copy</span><span>Stark</span></div>
-                <div class="skill-bar-shell"><div class="skill-bar-fill level-mid"></div></div>
-              </div>
-
-              <div class="skill-row">
-                <div class="skill-row-label"><span>Analys</span><span>God</span></div>
-                <div class="skill-bar-shell"><div class="skill-bar-fill level-low"></div></div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- CASE STUDIES -->
-        <section id="cases" class="section">
-          <div class="section-header">
-            <h2 class="section-title">Case Studies</h2>
-            <span class="section-kicker">Utvalda projekt</span>
-          </div>
-
-          <div class="case-grid">
-
-            <article class="case-card">
-              <img src="https://via.placeholder.com/300x200.png?text=Paid+Social" class="case-thumb" alt="">
-              <div>
-                <h3 class="case-title">Skalning av D2C-varumärke</h3>
-                <p class="case-desc">Byggde full funnel, optimerade kreativa koncept och ökade ROAS till 4.1.</p>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="https://via.placeholder.com/300x200.png?text=Brand" class="case-thumb" alt="">
-              <div>
-                <h3 class="case-title">Brand refresh för e-handelsbolag</h3>
-                <p class="case-desc">Ny tonalitet, visuell riktning och contentstrategi med fokus på långsiktig growth.</p>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="https://via.placeholder.com/300x200.png?text=CRM" class="case-thumb" alt="">
-              <div>
-                <h3 class="case-title">CRM & retentionprojekt</h3>
-                <p class="case-desc">Implementerade e-postflöden som ökade CLV med 2×.</p>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section">
-          <div class="section-header">
-            <h2 class="section-title">Kontakt</h2>
-            <span class="section-kicker">Samarbeten & uppdrag</span>
-          </div>
-
-          <p class="contact-text">
-            Vill du samarbeta med Simon?  
-            Maila honom eller besök LinkedIn-profilen.
-          </p>
-
-          <div class="contact-buttons">
-            <a class="btn primary" href="mailto:simon.tyden.busck@example.com">Maila Simon</a>
-            <a class="btn" target="_blank" href="https://www.linkedin.com">LinkedIn</a>
-          </div>
-        </section>
-
-      </section>
     </main>
-  </div>
 
-  <script src="scrips.js"></script>
+    <footer>
+        <p>© 2025 CV-Generator. Alla rättigheter reserverade.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
