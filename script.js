@@ -1,4 +1,4 @@
-// Enkel navigation mellan "sidorna" (SPA)
+// SPA-navigation
 function navigate(pageId) {
     const pages = document.querySelectorAll(".page");
     pages.forEach(p => p.classList.remove("active"));
@@ -10,13 +10,24 @@ function navigate(pageId) {
     }
 }
 
-// Klickbar header -> alltid till startsidan
+// Klickbar header -> startsidan + år i footer
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.getElementById("siteHeader");
     if (header) {
         header.addEventListener("click", () => navigate("home"));
     }
+
+    const yearSpan = document.getElementById("yearSpan");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
+
+/* Hjälpfunktion – radbrytningar */
+
+function nl2br(str) {
+    return str.replace(/\n/g, "<br>");
+}
 
 /* GENERERA CV */
 
@@ -37,12 +48,12 @@ function generateCV() {
         imgTag = `<img src="${imgURL}" class="preview-img" alt="Profilbild">`;
     }
 
-    const cvHtml = `
+    const html = `
         <div class="cv-left">
             ${imgTag}
             <div class="cv-name">${name}</div>
             ${title ? `<p class="cv-title">${title}</p>` : ""}
-
+            
             ${profile ? `
                 <div class="cv-section">
                     <h4 class="cv-section-title">Profil</h4>
@@ -77,7 +88,7 @@ function generateCV() {
         </div>
     `;
 
-    document.getElementById("cvOutput").innerHTML = cvHtml;
+    document.getElementById("cvOutput").innerHTML = html;
     navigate("cvPreview");
 }
 
@@ -98,7 +109,7 @@ function generatePB() {
         imgTag = `<img src="${imgURL}" class="preview-img" alt="Profilbild">`;
     }
 
-    const pbHtml = `
+    const html = `
         <div class="letter-header">
             ${imgTag}
             <div>
@@ -118,17 +129,11 @@ function generatePB() {
             <p>${nl2br(why)}</p>` : ""}
     `;
 
-    document.getElementById("pbOutput").innerHTML = pbHtml;
+    document.getElementById("pbOutput").innerHTML = html;
     navigate("pbPreview");
 }
 
-/* Hjälpfunktion – gör radbrytningar från textarea till <br> */
-
-function nl2br(str) {
-    return str.replace(/\n/g, "<br>");
-}
-
-/* NEDLADDNING SOM "PDF" (bild-baserad) */
+/* NEDLADDNING (bildbaserad "PDF") */
 
 function downloadPDF(elementId) {
     const element = document.getElementById(elementId);
@@ -136,7 +141,7 @@ function downloadPDF(elementId) {
 
     html2canvas(element, { scale: 2 }).then(canvas => {
         const link = document.createElement("a");
-        link.download = "mitt-dokument.png"; // Kan sen konverteras till PDF om du vill
+        link.download = "mitt-dokument.png"; // kan konverteras till PDF efteråt vid behov
         link.href = canvas.toDataURL("image/png");
         link.click();
     });
