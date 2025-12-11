@@ -1,148 +1,65 @@
-// SPA-navigation
-function navigate(pageId) {
-    const pages = document.querySelectorAll(".page");
-    pages.forEach(p => p.classList.remove("active"));
-
-    const target = document.getElementById(pageId);
-    if (target) {
-        target.classList.add("active");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+// PAGE NAVIGATION
+function navigate(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(page).classList.add("active");
+    window.scrollTo(0, 0);
 }
 
-// Klickbar header -> startsidan + år i footer
-document.addEventListener("DOMContentLoaded", () => {
-    const header = document.getElementById("siteHeader");
-    if (header) {
-        header.addEventListener("click", () => navigate("home"));
-    }
+// CLICK HEADER → HOME
+document.getElementById("siteHeader").onclick = () => navigate("home");
 
-    const yearSpan = document.getElementById("yearSpan");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-});
 
-/* Hjälpfunktion – radbrytningar */
-
-function nl2br(str) {
-    return str.replace(/\n/g, "<br>");
+// LIVE PREVIEW HANDLER
+function bindLive(inputId, previewId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    input.addEventListener("input", () => {
+        preview.innerHTML = input.value.replace(/\n/g, "<br>");
+    });
 }
 
-/* GENERERA CV */
+// CV LIVE FIELDS
+bindLive("cv_name", "cv_prev_name");
+bindLive("cv_title", "cv_prev_title");
+bindLive("cv_profile", "cv_prev_profile");
+bindLive("cv_exp", "cv_prev_exp");
+bindLive("cv_edu", "cv_prev_edu");
+bindLive("cv_skills", "cv_prev_skills");
+bindLive("cv_languages", "cv_prev_languages");
 
-function generateCV() {
-    const name = document.getElementById("cv_name").value || "Ditt namn";
-    const title = document.getElementById("cv_title").value || "";
-    const profile = document.getElementById("cv_profile").value || "";
-    const exp = document.getElementById("cv_exp").value || "";
-    const edu = document.getElementById("cv_edu").value || "";
-    const skills = document.getElementById("cv_skills").value || "";
-    const languages = document.getElementById("cv_languages").value || "";
+// PB LIVE FIELDS
+bindLive("pb_name", "pb_prev_name");
+bindLive("pb_age", "pb_prev_age");
+bindLive("pb_interests", "pb_prev_interests");
+bindLive("pb_story", "pb_prev_story");
+bindLive("pb_why", "pb_prev_why");
 
-    const imgInput = document.getElementById("cv_img").files[0];
-    let imgTag = "";
 
-    if (imgInput) {
-        const imgURL = URL.createObjectURL(imgInput);
-        imgTag = `<img src="${imgURL}" class="preview-img" alt="Profilbild">`;
-    }
+// IMAGE LIVE PREVIEW
+function liveImage(inputId, previewId) {
+    document.getElementById(inputId).addEventListener("change", function() {
+        const file = this.files[0];
+        const preview = document.getElementById(previewId);
 
-    const html = `
-        <div class="cv-left">
-            ${imgTag}
-            <div class="cv-name">${name}</div>
-            ${title ? `<p class="cv-title">${title}</p>` : ""}
-            
-            ${profile ? `
-                <div class="cv-section">
-                    <h4 class="cv-section-title">Profil</h4>
-                    <p>${nl2br(profile)}</p>
-                </div>` : ""}
-
-            ${skills ? `
-                <div class="cv-section">
-                    <h4 class="cv-section-title">Färdigheter</h4>
-                    <p>${nl2br(skills)}</p>
-                </div>` : ""}
-
-            ${languages ? `
-                <div class="cv-section">
-                    <h4 class="cv-section-title">Språk</h4>
-                    <p>${nl2br(languages)}</p>
-                </div>` : ""}
-        </div>
-
-        <div class="cv-right">
-            ${exp ? `
-                <div class="cv-section">
-                    <h4 class="cv-section-title">Arbetslivserfarenhet</h4>
-                    <p>${nl2br(exp)}</p>
-                </div>` : ""}
-
-            ${edu ? `
-                <div class="cv-section">
-                    <h4 class="cv-section-title">Utbildning</h4>
-                    <p>${nl2br(edu)}</p>
-                </div>` : ""}
-        </div>
-    `;
-
-    document.getElementById("cvOutput").innerHTML = html;
-    navigate("cvPreview");
+        if (file) {
+            const url = URL.createObjectURL(file);
+            preview.src = url;
+            preview.style.display = "block";
+        }
+    });
 }
 
-/* GENERERA PERSONLIGT BREV */
+liveImage("cv_img", "cv_img_preview");
+liveImage("pb_img", "pb_img_preview");
 
-function generatePB() {
-    const name = document.getElementById("pb_name").value || "Ditt namn";
-    const age = document.getElementById("pb_age").value || "";
-    const interests = document.getElementById("pb_interests").value || "";
-    const story = document.getElementById("pb_story").value || "";
-    const why = document.getElementById("pb_why").value || "";
 
-    const imgInput = document.getElementById("pb_img").files[0];
-    let imgTag = "";
-
-    if (imgInput) {
-        const imgURL = URL.createObjectURL(imgInput);
-        imgTag = `<img src="${imgURL}" class="preview-img" alt="Profilbild">`;
-    }
-
-    const html = `
-        <div class="letter-header">
-            ${imgTag}
-            <div>
-                <div class="letter-name">${name}</div>
-                ${age ? `<div>Ålder: ${age}</div>` : ""}
-            </div>
-        </div>
-
-        <p>${nl2br(story)}</p>
-
-        ${interests ? `
-            <h4 class="cv-section-title">Intressen</h4>
-            <p>${nl2br(interests)}</p>` : ""}
-
-        ${why ? `
-            <h4 class="cv-section-title">Varför jag söker tjänsten</h4>
-            <p>${nl2br(why)}</p>` : ""}
-    `;
-
-    document.getElementById("pbOutput").innerHTML = html;
-    navigate("pbPreview");
-}
-
-/* NEDLADDNING (bildbaserad "PDF") */
-
+// DOWNLOAD PDF (PNG-baserad)
 function downloadPDF(elementId) {
     const element = document.getElementById(elementId);
-    if (!element) return;
-
     html2canvas(element, { scale: 2 }).then(canvas => {
         const link = document.createElement("a");
-        link.download = "mitt-dokument.png"; // kan konverteras till PDF efteråt vid behov
-        link.href = canvas.toDataURL("image/png");
+        link.download = "dokument.png";
+        link.href = canvas.toDataURL();
         link.click();
     });
 }
