@@ -12,8 +12,9 @@
     <header class="header" id="siteHeader">
         <div class="header-inner">
             <div class="logo">
+                <!-- Spara din skrivmaskinsbild som images/typewriter.png -->
                 <img src="images/typewriter.png" alt="Skrivmaskin" class="logo-icon">
-                <span class="logo-text">MittCV.se</span>
+                <span class="logo-text">MITTCV.SE</span>
             </div>
         </div>
     </header>
@@ -21,28 +22,13 @@
     <!-- STARTSIDA -->
     <section id="home" class="page active">
         <div class="hero">
-            <div class="hero-text">
-                <span class="pill">Din digitala karriärpartner</span>
-                <h1>Skapa ett CV och personligt brev som sticker ut.</h1>
+            <div class="hero-left">
+                <p className="eyebrow">Modern karriär, klassisk känsla</p>
+                <h1>Bygg ett CV och personligt brev som känns lika stilrent som framtidens bilar.</h1>
                 <p class="intro-text">
-                    MittCV.se hjälper dig att forma proffsiga dokument som känns både seriösa och personliga.
-                    Fyll i dina uppgifter – vi skapar en snygg layout åt dig.
+                    MittCV.se hjälper dig från tom skärm till färdigt, proffsigt dokument.
+                    Fyll i din information – vi tar hand om strukturen och utseendet.
                 </p>
-
-                <div class="benefits">
-                    <div class="benefit-item">
-                        <span class="dot"></span>
-                        <p>Strukturerade, lättlästa CV:n som rekryterare älskar.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="dot"></span>
-                        <p>Personliga brev som förklarar vem du är – inte bara vad du gjort.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="dot"></span>
-                        <p>Snabb nedladdning som PDF – redo att skickas direkt.</p>
-                    </div>
-                </div>
 
                 <div class="button-row">
                     <button class="main-btn" onclick="navigate('cvForm')">Skapa ditt CV</button>
@@ -50,37 +36,44 @@
                 </div>
             </div>
 
-            <div class="hero-image office-hero">
-                <!-- Bakgrundsbild sätts i CSS -->
-                <div class="hero-overlay-card">
-                    <h3>Vad gör ett bra CV?</h3>
-                    <p>Ett tydligt CV lyfter dina styrkor, erfarenheter och potential – på några sekunder.</p>
+            <div class="hero-right">
+                <div class="hero-preview-card">
+                    <div class="hero-preview-heading">
+                        <div class="hero-preview-avatar"></div>
+                        <div>
+                            <div class="hero-preview-name">Ditt Namn</div>
+                            <div class="hero-preview-title">Din Titel</div>
+                        </div>
+                    </div>
+                    <div class="hero-preview-line"></div>
+                    <p class="hero-preview-text">
+                        Ett stilrent CV och ett genomtänkt personligt brev gör att du sticker ut
+                        redan innan intervjun har börjat.
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="card-container">
-            <div class="info-card">
-                <h3>CV – din överblick</h3>
+        <div class="info-row">
+            <div class="info-block">
+                <h2>Vad gör ett CV för dig?</h2>
                 <p>
-                    Ett CV är din sammanfattning: utbildning, jobb, färdigheter. Här visar du svart på vitt
-                    varför du matchar tjänsten.
+                    CV:t är din översikt – utbildning, erfarenheter och färdigheter. Här får
+                    rekryteraren en snabb bild av vad du kan och vad du gjort.
+                </p>
+                <p>
+                    Med MittCV.se blir det visuellt tydligt, lätt att skanna och modernt strukturerat.
                 </p>
             </div>
 
-            <div class="info-card">
-                <h3>Personligt brev – din röst</h3>
+            <div class="info-block">
+                <h2>Vad gör ett personligt brev?</h2>
                 <p>
-                    I det personliga brevet berättar du mer om dig som person – driv, intressen och varför
-                    du söker just det här jobbet.
+                    Det personliga brevet är din röst. Här berättar du vem du är, vad som driver dig
+                    och varför just den här tjänsten passar dig.
                 </p>
-            </div>
-
-            <div class="info-card">
-                <h3>Fördelarna med MittCV.se</h3>
                 <p>
-                    Vi kombinerar tydlig struktur, modern design och lekfulla detaljer för att göra din ansökan
-                    både proffsig och minnesvärd.
+                    Vi hjälper dig att forma texten till ett brev som känns både proffsigt och personligt.
                 </p>
             </div>
         </div>
@@ -89,7 +82,7 @@
     <!-- CV FORM -->
     <section id="cvForm" class="page">
         <h2>Skapa ditt CV</h2>
-        <p class="section-intro">Fyll i de viktigaste delarna så bygger vi upp ett tydligt och snyggt CV åt dig.</p>
+        <p class="section-intro">Fyll i de viktigaste delarna så bygger vi upp ett tydligt och stilrent CV åt dig.</p>
 
         <div class="form-grid">
             <div class="form-group">
@@ -104,12 +97,12 @@
 
             <div class="form-group full-width">
                 <label>Profil</label>
-                <textarea id="cv_profile" placeholder="En kort beskrivning av dig och vad du söker..."></textarea>
+                <textarea id="cv_profile" placeholder="En kort sammanfattning om vem du är och vad du söker..."></textarea>
             </div>
 
             <div class="form-group full-width">
                 <label>Arbetslivserfarenhet</label>
-                <textarea id="cv_exp" placeholder="Lista dina tidigare tjänster, roller och ansvar..."></textarea>
+                <textarea id="cv_exp" placeholder="Lista dina tidigare roller, arbetsplatser och ansvar..."></textarea>
             </div>
 
             <div class="form-group full-width">
@@ -142,7 +135,7 @@
     <!-- CV PREVIEW -->
     <section id="cvPreview" class="page">
         <h2>Förhandsgranskning – ditt CV</h2>
-        <p class="section-intro">Här ser du hur ditt CV kommer att se ut. Justera i formuläret om du vill ändra något.</p>
+        <p class="section-intro">Se hur ditt CV ser ut innan du laddar ner det.</p>
 
         <div id="cvOutput" class="preview-box cv-layout"></div>
 
@@ -156,7 +149,7 @@
     <section id="pbForm" class="page">
         <h2>Skapa ditt personliga brev</h2>
         <p class="section-intro">
-            Här fokuserar vi på dig som person – driv, intressen och varför du söker jobbet.
+            Fokusera på vem du är, vad som driver dig och varför just det här jobbet lockar dig.
         </p>
 
         <div class="form-grid">
@@ -172,12 +165,12 @@
 
             <div class="form-group full-width">
                 <label>Intressen</label>
-                <textarea id="pb_interests" placeholder="Vad gör du på fritiden? Vad brinner du för?"></textarea>
+                <textarea id="pb_interests" placeholder="Vad gör du på fritiden? Vad inspirerar dig?"></textarea>
             </div>
 
             <div class="form-group full-width">
                 <label>Kort om din bakgrund</label>
-                <textarea id="pb_story" placeholder="Berätta kort om din resa, tidigare jobb, studier..."></textarea>
+                <textarea id="pb_story" placeholder="Berätta kort om tidigare jobb, studier och erfarenheter..."></textarea>
             </div>
 
             <div class="form-group full-width">
@@ -210,10 +203,31 @@
         </div>
     </section>
 
-    <!-- HTML2CANVAS FÖR PDF-SKAPANDE -->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-text">© <span id="yearSpan"></span> MittCV.se</span>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="footer-icon-link">
+                    <!-- Enkel Facebook-ikon (SVG) -->
+                    <svg viewBox="0 0 24 24" class="footer-icon">
+                        <path d="M13.5 21v-7h2.3l.4-3h-2.7v-1.9c0-.9.2-1.3 1.4-1.3h1.3V5.1C15.7 5 14.9 5 14 5c-2.6 0-4 1.4-4 4v2H8v3h2v7h3.5z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="footer-icon-link">
+                    <!-- Enkel Instagram-ikon (SVG) -->
+                    <svg viewBox="0 0 24 24" class="footer-icon">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17" cy="7" r="1.1"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- HTML2CANVAS FÖR NEDLADDNING -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-
